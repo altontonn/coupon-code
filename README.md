@@ -24,9 +24,7 @@
 
 # 📖 [your_project_name] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Coupon code]** is an application that enables researchers to furnish incentive codes to potential participants for their research endeavors. Subsequently, the participants can utilize these codes to claim the incentives as provided by the researcher.
 
 ## 🛠 Built With <a name="built-with"></a>
 
