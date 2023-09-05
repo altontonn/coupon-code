@@ -53,6 +53,13 @@
   </ul>
 </details>
 
+<details>
+<summary>Webpack</summary>
+  <ul>
+    <li><a href="https://webpack.js.org/">Webpack</a></li>
+  </ul>
+</details>
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
