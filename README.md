@@ -40,9 +40,9 @@
 </details>
 
 <details>
-  <summary>Server</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -50,6 +50,13 @@
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Webpack</summary>
+  <ul>
+    <li><a href="https://webpack.js.org/">Webpack</a></li>
   </ul>
 </details>
 
