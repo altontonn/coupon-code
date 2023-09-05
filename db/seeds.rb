@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+codes = Code.create([
+  {
+  code: 'jKo69B'
+  },
+  {
+  code: 'pKJ02c'
+  },
+  {
+  code: 'ACD89d'
+  },
+  {
+  code: 'BD092d'
+  },
+  {
+  code: 'bn89Sz'
+  }
+]) 

@@ -24,9 +24,7 @@
 
 # 📖 [your_project_name] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Coupon code]** is an application that enables researchers to furnish incentive codes to potential participants for their research endeavors. Subsequently, the participants can utilize these codes to claim the incentives as provided by the researcher.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -73,7 +71,7 @@
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,12 +166,6 @@ Example:
 > Mention all of the collaborators of this project.
 
 👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)

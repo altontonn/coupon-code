@@ -1,2 +1,0 @@
-class CouponCode < ApplicationRecord
-end
