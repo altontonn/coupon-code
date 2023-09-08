@@ -17,7 +17,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -40,9 +39,9 @@
 </details>
 
 <details>
-  <summary>Server</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -50,6 +49,13 @@
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Webpack</summary>
+  <ul>
+    <li><a href="https://webpack.js.org/">Webpack</a></li>
   </ul>
 </details>
 
@@ -71,7 +77,7 @@
 
 > Add a link to your deployed project.
 
-- [Live Demo Link]()
+- [coming soon]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,9 +205,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project it a ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,22 +216,6 @@ If you like this project...
 > Give credit to everyone who inspired your codebase.
 
 I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
