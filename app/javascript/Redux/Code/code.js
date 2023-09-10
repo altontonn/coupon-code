@@ -5,3 +5,4 @@ const initialState = {
   data: [],
 }
 
+const baseURL = `${window.location.origin}/api/v1`;
