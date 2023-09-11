@@ -3,7 +3,8 @@ import axios from "axios";
 // const DISPLAYCODES = 'coupon-code/src/REDUX/DISPLAYCODES'
 
 const initialState = {
-  data: [],
+  codes: [],
+  status: null,
 }
 
 const baseURL = `${window.location.origin}/api/v1`;
