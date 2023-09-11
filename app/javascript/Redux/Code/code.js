@@ -11,7 +11,7 @@ const baseURL = `${window.location.origin}/api/v1`;
 export const fetchCodeData = createAsyncThunk(
   async (thunkAPI) => {
     try {
-      const response = await axios.get(`${baseURL}/codes`);
+      const response = await axios.get(`${baseURL}/code`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWitValue(e.response.data)
