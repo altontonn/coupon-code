@@ -5,18 +5,28 @@ import axios from "axios";
 const initialState = {
   codes: [],
   status: null,
-}
+};
 
 const baseURL = `${window.location.origin}/api/v1`;
-export const fetchCodeData = createAsyncThunk(
-  async (thunkAPI) => {
-    try {
-      const response = await axios.get(`${baseURL}/code`);
-      console.log(response.data)
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWitValue(e.response.data)
-    }
+export const fetchCodeData = createAsyncThunk(async (thunkAPI) => {
+  try {
+    const response = await axios.get(`${baseURL}/code`);
+    console.log(response.data);
+    return response.data;
+  } catch (e) {
+    return thunkAPI.rejectWitValue(e.response.data);
   }
-)
+});
 
+const codeSlice = createSlice({
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCodeData.pending, (state) => ({
+        ...state,
+        status: "loading",
+      }))
+      
+  },
+});
