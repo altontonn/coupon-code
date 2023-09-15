@@ -27,6 +27,10 @@ const codeSlice = createSlice({
         ...state,
         status: "loading",
       }))
-      
+      .addCase(fetchCodeData.fulfilled, (state, action) => ({
+        ...state,
+        status: "fulfilled",
+        codes: action.payload,
+      }))
   },
 });
