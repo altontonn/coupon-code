@@ -32,5 +32,9 @@ const codeSlice = createSlice({
         status: "fulfilled",
         codes: action.payload,
       }))
+      .addCase(fetchCodeData.rejected, (rejected) => ({
+        ...state,
+        status: "rejected",
+      }));
   },
 });
