@@ -12,6 +12,7 @@ export const fetchCodeData = createAsyncThunk(async (thunkAPI) => {
   try {
     const response = await axios.get(`${baseURL}/code`);
     console.log(response.data);
+    console.log("yess");
     return response.data;
   } catch (e) {
     return thunkAPI.rejectWitValue(e.response.data);
@@ -32,9 +33,11 @@ const codeSlice = createSlice({
         status: "fulfilled",
         codes: action.payload,
       }))
-      .addCase(fetchCodeData.rejected, (rejected) => ({
+      .addCase(fetchCodeData.rejected, (state) => ({
         ...state,
         status: "rejected",
       }));
   },
 });
+
+export default codeSlice;
