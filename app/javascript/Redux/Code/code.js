@@ -8,11 +8,11 @@ const initialState = {
 };
 
 const baseURL = `${window.location.origin}/api/v1`;
-export const fetchCodeData = createAsyncThunk(async (thunkAPI) => {
+export const fetchCodeData = createAsyncThunk(async () => {
   try {
     const response = await axios.get(`${baseURL}/code`);
-    console.log(response.data);
     console.log("yess");
+    console.log(response.data);
     return response.data;
   } catch (e) {
     return thunkAPI.rejectWitValue(e.response.data);
