@@ -1,7 +1,9 @@
-import { applyMiddleware, combineReducers, configureStore } from "@reduxjs/toolkit";
-import codeSlice from "./Code/code";
-const reducer = combineReducers({
-  codes: codeSlice,
+import { configureStore } from "@reduxjs/toolkit";
+import { reducer as codeReducer } from "./Code/code";
+
+const store = configureStore({
+  reducer: {
+    code: codeReducer,
+  }
 })
-const store = configureStore(reducer, applyMiddleware(thunk))
 export default store;

@@ -20,6 +20,7 @@ export const fetchCodeData = createAsyncThunk(async () => {
 });
 
 const codeSlice = createSlice({
+  name: "codes",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -40,4 +41,4 @@ const codeSlice = createSlice({
   },
 });
 
-export default codeSlice;
+export const { reducer } = codeSlice;
