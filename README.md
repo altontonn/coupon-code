@@ -161,11 +161,11 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [altontonn](https://github.com/altontonn/)
+- Twitter: [AlumasaNewton](https://twitter.com/AlumasaNewton)
+- Linkedin: [newton-alumasa](https://www.linkedin.com/in/newton-alumasa/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

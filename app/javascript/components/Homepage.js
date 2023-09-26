@@ -7,11 +7,19 @@ const Homepage = () => {
 
   useEffect(() => {
     dispatch(fetchCodeData());
-  }, [codes, dispatch])
+  }, [dispatch])
 
   return (
     <div>
-      <h1>Homepage</h1>
+      <ul>
+      {codes && codes.length > 0 ? (
+        codes.map((code, index) => (
+          <li key={index}>{code.code}</li>
+        ))
+      ) : (
+        <p>No codes available</p>
+      )}
+      </ul>
     </div>
   );
 };

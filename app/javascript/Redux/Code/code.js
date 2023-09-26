@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const baseURL = `${window.location.origin}/api/v1`;
-export const fetchCodeData = createAsyncThunk(async () => {
+export const fetchCodeData = createAsyncThunk(async (thunkAPI) => {
   try {
     const response = await axios.get(`${baseURL}/code`);
     console.log("yess");
