@@ -123,26 +123,14 @@ To get a local copy up and running, follow these steps.
     ```
     > Installing ruby add the command to the system—`irb` which we'll be using while making this tutorial.
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
-
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+  git clone https://github.com/altontonn/coupon-code.git
+  ```
 
 ### Install
 
