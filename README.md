@@ -145,15 +145,10 @@ Install this project with:
 ### Usage
 
 To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
+  *  Run `rails db:create` and `rails db:migrate`
+  *  Run `rails db:seed` to enter some data into database.
+  *  Run `./bin/dev` to start the server.
+  *  In your browser, go to `http://localhost:3000`.
 ### Run tests
 
 To run tests, run the following command:
