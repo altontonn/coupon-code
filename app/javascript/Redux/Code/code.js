@@ -4,20 +4,19 @@ import axios from "axios";
 
 const initialState = {
   codes: [],
-  status: null,
+  status: 'idle',
 };
 
 const baseURL = `${window.location.origin}/api/v1`;
-export const fetchCodeData = createAsyncThunk(async (thunkAPI) => {
+export const fetchCodeData = createAsyncThunk("codes/fetchCodeData", async () => {
   try {
     const response = await axios.get(`${baseURL}/code`);
-    console.log("yess");
-    console.log(response.data);
-    return response.data;
-  } catch (e) {
-    return thunkAPI.rejectWitValue(e.response.data);
+    return response.data; // Ensure this line correctly returns the data
+  } catch (error) {
+    throw error; // Let the error propagate
   }
 });
+
 
 const codeSlice = createSlice({
   name: "codes",
@@ -41,4 +40,4 @@ const codeSlice = createSlice({
   },
 });
 
-export const { reducer } = codeSlice;
+export default codeSlice.reducer

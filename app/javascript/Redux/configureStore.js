@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer as codeReducer } from "./Code/code";
+import codeSlice from "./Code/code";
 
 const store = configureStore({
   reducer: {
-    code: codeReducer,
+    codes: codeSlice,
   }
 })
 export default store;
