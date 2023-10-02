@@ -18,7 +18,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1 className="text-gray-900">Your Data Codes</h1>
+      <h1 className="text-3xl font-bold underline">Your Data Codes</h1>
       <ul className="divide-y divide-gray-200">
       {codes && codes.length > 0 ? (
         codes.map((code) => (
