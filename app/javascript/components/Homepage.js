@@ -18,10 +18,11 @@ const Homepage = () => {
 
   return (
     <div>
-      <ul>
+      <h1 className="text-gray-900">Your Data Codes</h1>
+      <ul className="divide-y divide-gray-200">
       {codes && codes.length > 0 ? (
         codes.map((code) => (
-          <li key={code.id}>{code.code}</li>
+          <li className="py-4 flex" key={code.id}>{code.code}</li>
         ))
       ) : (
         <p>No codes available</p>
