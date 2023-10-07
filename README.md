@@ -19,7 +19,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Coupon Codes] <a name="about-project"></a>
 
 **[Coupon code]** is an application that enables researchers to furnish incentive codes to potential participants for their research endeavors. Subsequently, the participants can utilize these codes to claim the incentives as provided by the researcher.
 
