@@ -158,7 +158,7 @@ To run the project, execute the following command:
 
 - [Github](https://github.com/altontonn/)
 - [Twitter](https://twitter.com/AlumasaNewton)
-- Linkedin: [newton-alumasa](https://www.linkedin.com/in/newton-alumasa/)
+- [Linkedin](https://www.linkedin.com/in/newton-alumasa/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
