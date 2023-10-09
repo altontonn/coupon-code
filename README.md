@@ -61,7 +61,6 @@
 
 - **Add incentive codes**
 - **Claim incentive codes**
-- **[key_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
