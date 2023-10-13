@@ -134,7 +134,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd SailingSpot
+  cd coupon-code
   bundle install
   yarn install
 ```
