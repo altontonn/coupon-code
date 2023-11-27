@@ -7,14 +7,7 @@ const Homepage = () => {
   const codes = useSelector((state) => state.codes.codes);
 
   useEffect(() => {
-    console.log("Fetching data...");
     dispatch(fetchCodeData())
-      .then((action) => {
-        console.log("Fetched data:", action.payload);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
   }, [dispatch]);
 
   return (
