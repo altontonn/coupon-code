@@ -18,7 +18,7 @@ const Homepage = () => {
   }, [dispatch]);
 
   return (
-    <div className="grid gap-x-8 gap-y-4 grid-cols-2">
+    <div className="grid gap-x-8 grid-cols-3">
       <div>
         <Form />
       </div>
@@ -35,6 +35,9 @@ const Homepage = () => {
             <p>No codes available</p>
           )}
         </ul>
+      </div>
+      <div>
+        <h1 className="text-3xl font-bold underline">Redeemed codes</h1>
       </div>
     </div>
   );
