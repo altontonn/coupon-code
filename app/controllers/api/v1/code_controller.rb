@@ -16,4 +16,8 @@ class Api::V1::CodeController < ApplicationController
       render json: { errors: code.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def code_params
+    params.require(:code).permit(:code)
+  end
 end
