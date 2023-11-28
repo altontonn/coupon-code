@@ -6,7 +6,6 @@ const store = configureStore({
   reducer: {
     codes: codeSlice,
     newCodes: addCodeSlice
-
   }
 })
 export default store;
