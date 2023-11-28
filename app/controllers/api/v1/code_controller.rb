@@ -10,6 +10,7 @@ class Api::V1::CodeController < ApplicationController
 
   def create
     code = Code.new(code_params)
+
     if code.save
       render json: { message: 'Code created successfully' }, status: :created
     else
@@ -17,6 +18,11 @@ class Api::V1::CodeController < ApplicationController
     end
   end
 
+  def show
+    render json: @code, serializer: CodeSerializer, status: :ok
+  end
+
+  private
   def code_params
     params.require(:code).permit(:code)
   end
