@@ -7,4 +7,13 @@ class Api::V1::CodeController < ApplicationController
   def new
     Code.new
   end
+
+  def create
+    code = Code.new(code_params)
+    if code.save
+      render json: { message: 'Code created successfully' }, status: :created
+    else
+      render json: { errors: code.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
 end
