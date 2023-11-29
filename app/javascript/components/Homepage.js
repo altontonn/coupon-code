@@ -21,7 +21,7 @@ const Homepage = () => {
           {codes && codes.length > 0 ? (
             codes.map((code) => (
               <li className="py-4 flex" key={code.id}>
-                {code.code}
+                {code.passcode}
               </li>
             ))
           ) : (

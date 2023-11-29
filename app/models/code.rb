@@ -1,4 +1,4 @@
 class Code < ApplicationRecord
-  validates_uniqueness_of :code
-  validates :code, presence: true, length: { is: 6}
+  validates_uniqueness_of :passcode
+  validates :passcode, presence: true, length: { is: 6}
 end

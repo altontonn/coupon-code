@@ -4,6 +4,10 @@ class Api::V1::CodeController < ApplicationController
     render json: @code.to_json
   end
 
+  def show
+    render json: @code, serializer: CodeSerializer, status: :ok
+  end
+
   def new
     Code.new
   end
@@ -18,12 +22,9 @@ class Api::V1::CodeController < ApplicationController
     end
   end
 
-  def show
-    render json: @code, serializer: CodeSerializer, status: :ok
-  end
-
   private
+
   def code_params
-    params.require(:code).permit(:code)
+    params.require(:code).permit(:passcode)
   end
 end
