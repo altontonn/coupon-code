@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { fetchCodeData } from "../Redux/Code/code";
 import { useDispatch, useSelector } from "react-redux";
 import Form from "./Form";
-const Homepage = () => {
+const Researcher = () => {
   const dispatch = useDispatch();
   const codes = useSelector((state) => state.codes.codes);
 
@@ -35,4 +35,4 @@ const Homepage = () => {
     </div>
   );
 };
-export default Homepage;
+export default Researcher;
