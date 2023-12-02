@@ -33,12 +33,12 @@ const Researcher = () => {
       <div>
         <h1 className="text-3xl font-bold underline">Redeemed codes</h1>
         <div>
-          <ul>
+          <ul className="divide-y divide-gray-200">
             {redeemedCodes && redeemedCodes.length > 0 ? (
               redeemedCodes.map((redeemedCode) => (
-                <li key={redeemedCode.id}>
-                <p>ID: {redeemedCode.id}</p>
-                <p>Redeemed Code: {redeemedCode.passcode}</p>
+                <li className="py-4 flex" key={redeemedCode.id}>
+                <b>{redeemedCode.id}.</b>&nbsp;
+                {redeemedCode.passcode}
               </li>
               ))
             ) : (
