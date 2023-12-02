@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { fetchCodeData } from "../Redux/Code/code";
 import { useDispatch, useSelector } from "react-redux";
+import { CodeContext } from "./CodeContext";
 import Form from "./Form";
 const Researcher = () => {
   const dispatch = useDispatch();
   const codes = useSelector((state) => state.codes.codes);
-
+  const { redeemedCodes } = useContext(CodeContext);
   useEffect(() => {
-    dispatch(fetchCodeData())
+    dispatch(fetchCodeData());
   }, [dispatch]);
 
   return (
@@ -31,6 +32,20 @@ const Researcher = () => {
       </div>
       <div>
         <h1 className="text-3xl font-bold underline">Redeemed codes</h1>
+        <div>
+          <ul>
+            {redeemedCodes && redeemedCodes.length > 0 ? (
+              redeemedCodes.map((redeemedCode) => (
+                <li key={redeemedCode.id}>
+                <p>ID: {redeemedCode.id}</p>
+                <p>Redeemed Code: {redeemedCode.passcode}</p>
+              </li>
+              ))
+            ) : (
+              <p>No redeemed codes available</p>
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
