@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { fetchCodeData } from "../Redux/Code/code";
 import { useDispatch, useSelector } from "react-redux";
-import { CodeContext } from "./CodeContext";
 import Form from "./Form";
 const Researcher = () => {
   const dispatch = useDispatch();
   const codes = useSelector((state) => state.codes.codes);
-  const { redeemedCodes } = useContext(CodeContext);
+  const redeemedCodes = useSelector((state) => state.codes.redeemedCodes)
   useEffect(() => {
     dispatch(fetchCodeData());
   }, [dispatch]);

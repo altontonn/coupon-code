@@ -2,12 +2,12 @@ import React, { createContext, useState } from 'react';
 
 export const CodeContext = createContext();
 export const CodeProvider = ({children}) => {
-  const [redeemedCodes, setRedeemedCodes] = useState([]);
-  const addRedeemedCode = (redeemedCode) => {
-    setRedeemedCodes([...redeemedCodes, redeemedCode]);
+  const [claimedCodes, setClaimedCodes] = useState([]);
+  const addRedeemedCodes = (claimedCode) => {
+    setClaimedCodes([...claimedCodes, claimedCode]);
   }
   return (
-    <CodeContext.Provider value={{redeemedCodes, addRedeemedCode}}>
+    <CodeContext.Provider value={{claimedCodes, addRedeemedCodes}}>
       {children}
     </CodeContext.Provider>
   )

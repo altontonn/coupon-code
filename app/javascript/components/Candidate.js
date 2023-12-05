@@ -1,32 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
-import { fetchCodeData } from "../Redux/Code/code";
+import React, { useEffect } from "react";
+import { fetchCodeData, addRedeemedCode } from "../Redux/Code/code";
 import { useDispatch, useSelector } from "react-redux";
-import { CodeContext } from "./CodeContext";
 
 const Candidate = () => {
   const dispatch = useDispatch();
-  const [redeemCodes, setRedeemedCode] = useState([]);
+  const redeemedCodes = useSelector((state) => state.codes.redeemedCodes)
   const codes = useSelector((state) => state.codes.codes);
   useEffect(() => {
     dispatch(fetchCodeData());
   }, [dispatch]);
 
-  const { addRedeemedCode } = useContext(CodeContext);
   const redeemCode = (id) => {
-    setRedeemedCode([...redeemCodes, id]);
     const codeToRedeem = codes.find((code) => code.id === id);
-    if (codeToRedeem) {
+    if (codeToRedeem && !redeemedCodes.some((code) => code.id === id)) {
       const redeemedCode = {
         id: id,
         passcode: codeToRedeem.passcode, // Access passcode from the 'codeToRedeem' object
         redeemedAt: new Date().toISOString(),
       };
 
-      addRedeemedCode(redeemedCode);
+      dispatch(addRedeemedCode(redeemedCode));
     }
   };
   const isRedeemed = (id) => {
-    return redeemCodes.includes(id);
+    return redeemedCodes.some((code) => code.id === id);
   };
   return (
     <div>
