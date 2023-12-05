@@ -23,7 +23,11 @@ export const fetchCodeData = createAsyncThunk("codes/fetchCodeData", async () =>
 const codeSlice = createSlice({
   name: "codes",
   initialState,
-  reducers: {},
+  reducers: {
+    addRedeemedCode: (state, action) => {
+      state.redeemedCodes.push(action.payload)
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCodeData.pending, (state) => ({
