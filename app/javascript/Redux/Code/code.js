@@ -46,4 +46,5 @@ const codeSlice = createSlice({
   },
 });
 
+export const { addRedeemedCode } = codeSlice.actions;
 export default codeSlice.reducer
