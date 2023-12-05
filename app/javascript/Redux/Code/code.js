@@ -4,10 +4,12 @@ import axios from "axios";
 
 const initialState = {
   codes: [],
+  redeemedCodes: [],
   status: 'idle',
 };
 
 const baseURL = `${window.location.origin}/api/v1`;
+
 export const fetchCodeData = createAsyncThunk("codes/fetchCodeData", async () => {
   try {
     const response = await axios.get(`${baseURL}/code`);
@@ -21,7 +23,11 @@ export const fetchCodeData = createAsyncThunk("codes/fetchCodeData", async () =>
 const codeSlice = createSlice({
   name: "codes",
   initialState,
-  reducers: {},
+  reducers: {
+    addRedeemedCode: (state, action) => {
+      state.redeemedCodes.push(action.payload)
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCodeData.pending, (state) => ({
@@ -40,4 +46,5 @@ const codeSlice = createSlice({
   },
 });
 
+export const { addRedeemedCode } = codeSlice.actions;
 export default codeSlice.reducer

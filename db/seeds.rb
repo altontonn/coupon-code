@@ -7,18 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 codes = Code.create([
   {
-  code: 'jKo69B'
+  passcode: 'jKo69B'
   },
   {
-  code: 'pKJ02c'
+  passcode: 'pKJ02c'
   },
   {
-  code: 'ACD89d'
+  passcode: 'ACD89d'
   },
   {
-  code: 'BD092d'
+  passcode: 'BD092d'
   },
   {
-  code: 'bn89Sz'
+  passcode: 'bn89Sz'
   }
 ]) 
