@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-// const DISPLAYCODES = 'coupon-code/src/REDUX/DISPLAYCODES'
 
 const initialState = {
   codes: [],
@@ -18,7 +17,6 @@ export const fetchCodeData = createAsyncThunk("codes/fetchCodeData", async () =>
     throw error; // Let the error propagate
   }
 });
-
 
 const codeSlice = createSlice({
   name: "codes",
