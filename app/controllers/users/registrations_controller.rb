@@ -7,5 +7,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
-  end 
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 end
