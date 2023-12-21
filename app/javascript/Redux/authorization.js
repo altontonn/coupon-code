@@ -14,3 +14,24 @@ export const getAuthorzation = createAsyncThunk('coupon-code/authorization', asy
     throw error;
   }
 })
+
+const authorizationSlice = createSlice({
+  name: 'abilities',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+    .addCase(getAuthorzation.pending, (state) => {
+      state.status = "loading";
+    })
+    .addCase(getAuthorzation.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.abilities = action.payload;
+    })
+    .addCase(getAuthorzation.rejected, (state) => {
+      state.status = "failed";
+      state.error = action.error.message;
+    })
+  },
+})
+export default authorizationSlice.reducer;
