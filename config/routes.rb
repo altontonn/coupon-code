@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :new, :create]
       resources :code, only: [:index, :show, :new, :create]
+      resources :abilities, only: [:index, :authorized]
     end
   end
   
