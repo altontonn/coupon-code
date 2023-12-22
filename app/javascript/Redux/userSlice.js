@@ -24,3 +24,18 @@ export const loginUser = createAsyncThunk(
     }
   }
 )
+
+const signup = "/signup";
+
+const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
+  user_id: 0,
+  name: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+  pending: "",
+  success: "",
+  rejected: "",
+  errMessage: "",
+  role: ""
+}
