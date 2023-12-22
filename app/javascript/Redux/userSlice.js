@@ -39,3 +39,32 @@ const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
   errMessage: "",
   role: ""
 }
+
+const initialState = {
+  user: userFromLocalStorage,
+}
+
+export const registerUser = createAsyncThunk(
+  "user/register",
+  async({name, email, password, password_confirmation}) => {
+    const response = await fetch(signup, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: {
+          name,
+          email,
+          password,
+          password_confirmation
+        },
+      }),
+    });
+    const data = await response.json();
+    if(response.status === 201) {
+      return data;
+    }
+  }
+)
