@@ -68,3 +68,14 @@ export const registerUser = createAsyncThunk(
     }
   }
 )
+
+const useSlice = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem("user");
+      state.user = initialState.user;
+    },
+  },
+})
