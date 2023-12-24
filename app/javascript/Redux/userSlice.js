@@ -126,3 +126,6 @@ const useSlice = createSlice({
     })
   }
 })
+export const useSelector = (state) => state.user.user;
+export const {logout} = useSlice.actions;
+export default useSlice.reducer;
