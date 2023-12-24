@@ -78,4 +78,12 @@ const useSlice = createSlice({
       state.user = initialState.user;
     },
   },
+  extraReducers: (builder) => {
+    builder
+    addCase(registerUser.pending, (state) => {
+      const newState = state.user;
+      newState.pending = true;
+      newState.rejected = false;
+    })
+  }
 })
