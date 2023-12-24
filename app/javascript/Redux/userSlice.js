@@ -80,12 +80,12 @@ const useSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    addCase(registerUser.pending, (state) => {
+    .addCase(registerUser.pending, (state) => {
       const newState = state.user;
       newState.pending = true;
       newState.rejected = false;
     })
-    addCase(registerUser.fulfilled, (state, action) => {
+    .addCase(registerUser.fulfilled, (state, action) => {
       const newState = state.user;
       newState.pending = false;
       newState.fulfilled = true;
@@ -96,18 +96,18 @@ const useSlice = createSlice({
       newState.role = action.payload.role;
       localStorage.setItem("user", JSON.stringify(newState))
     })
-    addCase(registerUser.rejected, (state, action) => {
+    .addCase(registerUser.rejected, (state, action) => {
       const newState = state.user;
       newState.pending = false;
       newState.fulfilled = false;
       newState.rejected = true;
     })
-    addCase(loginUser.pending, (state) => {
+    .addCase(loginUser.pending, (state) => {
       const newState = state.user;
       newState.pending = true;
       newState.rejected = false;
     })
-    addCase(loginUser.fulfilled, (state, action) => {
+    .addCase(loginUser.fulfilled, (state, action) => {
       const newState = state.user;
       newState.pending = false;
       newState.fulfilled = true;
@@ -118,7 +118,7 @@ const useSlice = createSlice({
       newState.role = action.payload.role;
       localStorage.setItem("user", JSON.stringify(newState))
     })
-    addCase(loginUser.rejected, (state, action) => {
+    .addCase(loginUser.rejected, (state, action) => {
       const newState = state.user;
       newState.pending = false;
       newState.fulfilled = false;
