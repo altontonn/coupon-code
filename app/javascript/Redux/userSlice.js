@@ -107,5 +107,16 @@ const useSlice = createSlice({
       newState.pending = true;
       newState.rejected = false;
     })
+    addCase(loginUser.fulfilled, (state, action) => {
+      const newState = state.user;
+      newState.pending = false;
+      newState.fulfilled = true;
+      newState.rejected = false;
+      newState.name = action.payload.name;
+      newState.email = action.payload.email;
+      newState.user_id = action.payload.id;
+      newState.role = action.payload.role;
+      localStorage.setItem("user", JSON.stringify(newState))
+    })
   }
 })
