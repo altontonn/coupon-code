@@ -96,5 +96,11 @@ const useSlice = createSlice({
       newState.role = action.payload.role;
       localStorage.setItem("user", JSON.stringify(newState))
     })
+    addCase(registerUser.rejected, (state, action) => {
+      const newState = state.user;
+      newState.pending = false;
+      newState.fulfilled = false;
+      newState.rejected = true;
+    })
   }
 })
