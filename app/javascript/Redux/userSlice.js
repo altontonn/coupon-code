@@ -102,5 +102,10 @@ const useSlice = createSlice({
       newState.fulfilled = false;
       newState.rejected = true;
     })
+    addCase(loginUser.pending, (state) => {
+      const newState = state.user;
+      newState.pending = true;
+      newState.rejected = false;
+    })
   }
 })
