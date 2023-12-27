@@ -4,26 +4,26 @@ const login = "/signin";
 
 export const loginUser = createAsyncThunk(
   "user/login",
-  async({email, password}) => {
+  async ({ email, password }) => {
     const response = await fetch(login, {
       method: "POST",
       header: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user: {
           email,
-          password
+          password,
         },
       }),
     });
     const data = await response.json();
-    if(response.status === 201) {
+    if (response.status === 201) {
       return data;
     }
   }
-)
+);
 
 const signup = "/signup";
 
@@ -37,16 +37,16 @@ const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
   success: "",
   rejected: "",
   errMessage: "",
-  role: ""
-}
+  role: "",
+};
 
 const initialState = {
   user: userFromLocalStorage,
-}
+};
 
 export const registerUser = createAsyncThunk(
   "user/register",
-  async({name, email, password, password_confirmation}) => {
+  async ({ name, email, password, password_confirmation }) => {
     const response = await fetch(signup, {
       method: "POST",
       headers: {
@@ -58,16 +58,16 @@ export const registerUser = createAsyncThunk(
           name,
           email,
           password,
-          password_confirmation
+          password_confirmation,
         },
       }),
     });
     const data = await response.json();
-    if(response.status === 201) {
+    if (response.status === 201) {
       return data;
     }
   }
-)
+);
 
 const useSlice = createSlice({
   name: "user",
@@ -80,52 +80,52 @@ const useSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    .addCase(registerUser.pending, (state) => {
-      const newState = state.user;
-      newState.pending = true;
-      newState.rejected = false;
-    })
-    .addCase(registerUser.fulfilled, (state, action) => {
-      const newState = state.user;
-      newState.pending = false;
-      newState.fulfilled = true;
-      newState.rejected = false;
-      newState.name = action.payload.name;
-      newState.email = action.payload.email;
-      newState.user_id = action.payload.id;
-      newState.role = action.payload.role;
-      localStorage.setItem("user", JSON.stringify(newState))
-    })
-    .addCase(registerUser.rejected, (state, action) => {
-      const newState = state.user;
-      newState.pending = false;
-      newState.fulfilled = false;
-      newState.rejected = true;
-    })
-    .addCase(loginUser.pending, (state) => {
-      const newState = state.user;
-      newState.pending = true;
-      newState.rejected = false;
-    })
-    .addCase(loginUser.fulfilled, (state, action) => {
-      const newState = state.user;
-      newState.pending = false;
-      newState.fulfilled = true;
-      newState.rejected = false;
-      newState.name = action.payload.name;
-      newState.email = action.payload.email;
-      newState.user_id = action.payload.id;
-      newState.role = action.payload.role;
-      localStorage.setItem("user", JSON.stringify(newState))
-    })
-    .addCase(loginUser.rejected, (state, action) => {
-      const newState = state.user;
-      newState.pending = false;
-      newState.fulfilled = false;
-      newState.rejected = true;
-    })
-  }
-})
-export const useSelector = (state) => state.user.user;
-export const {logout} = useSlice.actions;
+      .addCase(registerUser.pending, (state) => {
+        const newState = state.user;
+        newState.pending = true;
+        newState.rejected = false;
+      })
+      .addCase(registerUser.fulfilled, (state, action) => {
+        const newState = state.user;
+        newState.pending = false;
+        newState.fulfilled = true;
+        newState.rejected = false;
+        newState.name = action.payload.name;
+        newState.email = action.payload.email;
+        newState.user_id = action.payload.id;
+        newState.role = action.payload.role;
+        localStorage.setItem("user", JSON.stringify(newState));
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        const newState = state.user;
+        newState.pending = false;
+        newState.fulfilled = false;
+        newState.rejected = true;
+      })
+      .addCase(loginUser.pending, (state) => {
+        const newState = state.user;
+        newState.pending = true;
+        newState.rejected = false;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        const newState = state.user;
+        newState.pending = false;
+        newState.fulfilled = true;
+        newState.rejected = false;
+        newState.name = action.payload.name;
+        newState.email = action.payload.email;
+        newState.user_id = action.payload.id;
+        newState.role = action.payload.role;
+        localStorage.setItem("user", JSON.stringify(newState));
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        const newState = state.user;
+        newState.pending = false;
+        newState.fulfilled = false;
+        newState.rejected = true;
+      });
+  },
+});
+export const userSelector = (state) => state.user.user;
+export const { logout } = useSlice.actions;
 export default useSlice.reducer;
