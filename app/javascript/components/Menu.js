@@ -51,6 +51,12 @@ const Menu = () => {
       >
         Candidate
       </NavLink>
+      <NavLink
+        to="/login"
+        className="mr-6 font-semibold text-teal-200 hover:text-white"
+      >
+        Candidate
+      </NavLink>
     </ul>
   );
 };
