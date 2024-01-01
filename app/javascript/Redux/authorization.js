@@ -6,9 +6,11 @@ const initialState = {
   error: null
 }
 
+const baseUrl = `${window.location.origin}/api/v1`;
+
 export const getAuthorzation = createAsyncThunk('coupon-code/authorization', async() =>{
   try {
-    const response = await axios.get('/api/v1/abilities');
+    const response = await axios.get(`${baseUrl}/abilities`);
     return response.data;
   } catch (error) {
     throw error;
@@ -28,7 +30,7 @@ const authorizationSlice = createSlice({
       state.status = "succeeded";
       state.abilities = action.payload;
     })
-    .addCase(getAuthorzation.rejected, (state) => {
+    .addCase(getAuthorzation.rejected, (state, action) => {
       state.status = "failed";
       state.error = action.error.message;
     })
