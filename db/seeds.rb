@@ -5,20 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-codes = Code.create([
-  {
-  passcode: 'jKo69B'
-  },
-  {
-  passcode: 'pKJ02c'
-  },
-  {
-  passcode: 'ACD89d'
-  },
-  {
-  passcode: 'BD092d'
-  },
-  {
-  passcode: 'bn89Sz'
-  }
-]) 
+# Assuming you have User and Code models defined with proper associations
+
+# Create a user
+user = User.create(name: 'User', email: 'user@gmail.com', password: '123456', role: 'user')
+
+# Check if the user was created successfully before creating a code
+if user.persisted?
+  # Associate the code with the user using the user_id
+  code = Code.create(passcode: 'jKo69B', user_id: user.id)
+else
+  puts "User creation failed: #{user.errors.full_messages}" # Output any errors if user creation fails
+end

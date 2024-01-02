@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { createCode } from "../Redux/Code/AddCode";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const Form = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
   const [passcode, setPasscode] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,6 +11,7 @@ const Form = () => {
       dispatch(
         createCode({
           "passcode": passcode,
+          "user_id": user.user_id,
         })
       );
       setPasscode("");
@@ -25,9 +27,7 @@ const Form = () => {
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
-              <label
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
+              <label className="block text-sm font-medium leading-6 text-gray-900">
                 Code
               </label>
               <div className="mt-2">
