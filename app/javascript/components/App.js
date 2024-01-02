@@ -14,8 +14,8 @@ export const App = () => {
         <Menu />
         <CodeProvider>
           <Routes>
-            <Route path="/" element={<Researcher />} />
-            <Route path="/candidate" element={<Candidate />} />
+            <Route path="/" element={<Candidate />} />
+            <Route path="/researcher" element={<Researcher />} />
             <Route path="/login" element={<LoginForm />} />
           </Routes>
         </CodeProvider>

@@ -39,14 +39,14 @@ const Menu = () => {
       {user.success && <p className="text nav-text">Welcome {user.name}</p>}
       {user.success && (
         <NavLink
-          to="/"
+          to="/researcher"
           className="mr-6 font-semibold text-teal-200 hover:text-white"
         >
           Researcher
         </NavLink>
       )}
       <NavLink
-        to="/candidate"
+        to="/"
         className="mr-6 font-semibold text-teal-200 hover:text-white"
       >
         Candidate
