@@ -75,8 +75,8 @@ const LoginForm = () => {
             />
           </Col>
         </Form.Group>
-        <button type="button" class="btn btn-primary">
-          Primary
+        <button type="submit" className="btn btn-primary">
+          Submit
         </button>
       </Form>
     </div>
