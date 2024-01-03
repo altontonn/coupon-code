@@ -7,25 +7,25 @@ const RegisterForm = () => {
       <div className="d-flex justify-content-center">
         <form className="row g-3 w-50">
           <div className="col-md-12">
-            <label for="inputEmail4" className="form-label">
+            <label for="Name" className="form-label">
               Name
             </label>
             <input type="text" className="form-control" name="name" />
           </div>
           <div className="col-md-12">
-            <label for="inputEmail4" className="form-label">
+            <label for="Email" className="form-label">
               Email
             </label>
             <input type="email" className="form-control" name="email" />
           </div>
           <div className="col-md-12">
-            <label for="inputPassword4" className="form-label">
+            <label for="Password" className="form-label">
               Password
             </label>
             <input type="password" className="form-control" name="password" />
           </div>
           <div className="col-md-12">
-            <label for="inputPassword4" className="form-label">
+            <label for="Password Confirmation" className="form-label">
               Re-Password
             </label>
             <input
