@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../Redux/userSlice";
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <>
       <div className="d-flex justify-content-center">
