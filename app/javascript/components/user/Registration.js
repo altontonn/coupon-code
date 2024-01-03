@@ -7,12 +7,19 @@ const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [state, setState] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: ''
-  })
-  const [errorMessage, setErrorMessage] = useState('')
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleInputChange = (event) => {
+    const {name, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
   return (
     <>
       <div className="d-flex justify-content-center">
@@ -53,7 +60,10 @@ const RegisterForm = () => {
         </form>
       </div>
       <p className="text-center">
-        Already have an account? <Link className="text-decoration-none" to="/login">Login Here</Link>
+        Already have an account?{" "}
+        <Link className="text-decoration-none" to="/login">
+          Login Here
+        </Link>
       </p>
     </>
   );
