@@ -6,6 +6,12 @@ import { registerUser } from "../../Redux/userSlice";
 const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: ''
+  })
   return (
     <>
       <div className="d-flex justify-content-center">
