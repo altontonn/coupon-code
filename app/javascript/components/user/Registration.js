@@ -12,6 +12,7 @@ const RegisterForm = () => {
     password: '',
     password_confirmation: ''
   })
+  const [errorMessage, setErrorMessage] = useState('')
   return (
     <>
       <div className="d-flex justify-content-center">
