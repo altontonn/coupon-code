@@ -40,21 +40,29 @@ const Menu = () => {
       {user.success && (
         <NavLink
           to="/researcher"
-          className="mr-6 font-semibold text-teal-200 hover:text-white"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
         >
           Researcher
         </NavLink>
       )}
       <NavLink
         to="/"
-        className="mr-6 font-semibold text-teal-200 hover:text-white"
+        className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
       >
         Candidate
       </NavLink>
       {!user.success && (
         <NavLink
           to="/login"
-          className="mr-6 font-semibold text-teal-200 hover:text-white"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+        >
+          Login
+        </NavLink>
+      )}
+      {!user.success && (
+        <NavLink
+          to="/register"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
         >
           Login
         </NavLink>
