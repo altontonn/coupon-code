@@ -37,6 +37,22 @@ const Menu = () => {
   return (
     <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
       {user.success && <p className="text nav-text">Welcome {user.name}</p>}
+      {!user.success && (
+        <NavLink
+          to="/login"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+        >
+          Login
+        </NavLink>
+      )}
+      {!user.success && (
+        <NavLink
+          to="/register"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+        >
+          Register
+        </NavLink>
+      )}
       {user.success && (
         <NavLink
           to="/researcher"
@@ -51,22 +67,6 @@ const Menu = () => {
       >
         Candidate
       </NavLink>
-      {!user.success && (
-        <NavLink
-          to="/login"
-          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-        >
-          Login
-        </NavLink>
-      )}
-      {!user.success && (
-        <NavLink
-          to="/register"
-          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-        >
-          Login
-        </NavLink>
-      )}
     </ul>
   );
 };
