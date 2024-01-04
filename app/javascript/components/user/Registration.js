@@ -37,6 +37,7 @@ const RegisterForm = () => {
   return (
     <>
       <div className="d-flex justify-content-center">
+        {errorMessage && <p style={{ color: 'red', fontSize: '0.8em' }}>{errorMessage}</p>}
         <form className="row g-3 w-50" onSubmit={handleSubmit}>
           <div className="col-md-12">
             <label for="Name" className="form-label">
