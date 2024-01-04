@@ -7,7 +7,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }) => {
     const response = await fetch(login, {
       method: "POST",
-      header: {
+      headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
@@ -25,7 +25,7 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-const signup = "/signup";
+const register = "/register";
 
 const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
   user_id: 0,
@@ -33,9 +33,9 @@ const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
   email: "",
   password: "",
   password_confirmation: "",
-  pending: "",
-  success: "",
-  rejected: "",
+  pending: false,
+  success: false,
+  rejected: false,
   errMessage: "",
   role: "",
 };
@@ -47,7 +47,7 @@ const initialState = {
 export const registerUser = createAsyncThunk(
   "user/register",
   async ({ name, email, password, password_confirmation }) => {
-    const response = await fetch(signup, {
+    const response = await fetch(register, {
       method: "POST",
       headers: {
         Accept: "application/json",

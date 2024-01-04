@@ -23,16 +23,14 @@ const RegisterForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { name, email, password, password_confirmation } = state;
-    dispatch(
-      registerUser({ name, email, password, password_confirmation })
-        .then(() => {
-          navigate("/");
-        })
-        .catch((error) => {
-          const err = "Registration failed with error";
-          setErrorMessage(err);
-        })
-    );
+    dispatch(registerUser({ name, email, password, password_confirmation }))
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        const err = "Registration failed with error";
+        setErrorMessage(err);
+      });
   };
   return (
     <>

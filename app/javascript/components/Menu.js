@@ -23,17 +23,17 @@ const Menu = () => {
     }
   };
 
-  const isAuthorized = (resource_name, perfom_action) => {
-    if (Object.keys(abilities).length !== 0) {
-      const rules = abilities["rules"];
-      const rules_index = abilities["rules_index"];
-      const resource_index = rules_index[resource_name][0];
-      const actions = rules[resource_index]["actions"];
-      return actions.includes(perfom_action);
-    } else {
-      return false;
-    }
-  };
+  // const isAuthorized = (resource_name, perfom_action) => {
+  //   if (Object.keys(abilities).length !== 0) {
+  //     const rules = abilities["rules"];
+  //     const rules_index = abilities["rules_index"];
+  //     const resource_index = rules_index[resource_name][0];
+  //     const actions = rules[resource_index]["actions"];
+  //     return actions.includes(perfom_action);
+  //   } else {
+  //     return false;
+  //   }
+  // };
   return (
     <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
       {user.success && <p className="text nav-text">Welcome {user.name}</p>}

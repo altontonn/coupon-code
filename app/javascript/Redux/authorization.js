@@ -6,11 +6,11 @@ const initialState = {
   error: null
 }
 
-const baseUrl = `${window.location.origin}/api/v1`;
+// const baseUrl = `${window.location.origin}/api/v1`;
 
 export const getAuthorzation = createAsyncThunk('coupon-code/authorization', async() =>{
   try {
-    const response = await axios.get(`${baseUrl}/abilities`);
+    const response = await axios.get('/api/v1/abilities');
     return response.data;
   } catch (error) {
     throw error;
