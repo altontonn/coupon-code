@@ -52,7 +52,7 @@ const RegisterForm = () => {
             <input type="email" className="form-control" name="email" value={state.email} onChange={handleInputChange} required/>
           </div>
           <div className="col-md-12">
-            <label for="Password" className="form-label">
+            <label for="Password" className="form-label" value={state.password} onChange={handleInputChange} required>
               Password
             </label>
             <input type="password" className="form-control" name="password" />
