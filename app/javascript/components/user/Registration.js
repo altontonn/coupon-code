@@ -75,7 +75,7 @@ const RegisterForm = () => {
               type="password"
               className="form-control"
               name="password"
-              value={state.email}
+              value={state.password}
               onChange={handleInputChange}
               required
             />
