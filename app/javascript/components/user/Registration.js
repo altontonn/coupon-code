@@ -55,7 +55,7 @@ const RegisterForm = () => {
             <label for="Password" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control" name="password" />
+            <input type="password" className="form-control" name="password" value={state.email} onChange={handleInputChange} required/>
           </div>
           <div className="col-md-12">
             <label for="Password Confirmation" className="form-label">
