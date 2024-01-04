@@ -37,25 +37,48 @@ const RegisterForm = () => {
   return (
     <>
       <div className="d-flex justify-content-center">
-        {errorMessage && <p style={{ color: 'red', fontSize: '0.8em' }}>{errorMessage}</p>}
+        {errorMessage && (
+          <p style={{ color: "red", fontSize: "0.8em" }}>{errorMessage}</p>
+        )}
         <form className="row g-3 w-50" onSubmit={handleSubmit}>
           <div className="col-md-12">
             <label for="Name" className="form-label">
               Name
             </label>
-            <input type="text" className="form-control" name="name" value={state.name} onChange={handleInputChange} required/>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={state.name}
+              onChange={handleInputChange}
+              required
+            />
           </div>
           <div className="col-md-12">
             <label for="Email" className="form-label">
               Email
             </label>
-            <input type="email" className="form-control" name="email" value={state.email} onChange={handleInputChange} required/>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={state.email}
+              onChange={handleInputChange}
+              required
+            />
           </div>
           <div className="col-md-12">
             <label for="Password" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control" name="password" value={state.email} onChange={handleInputChange} required/>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              value={state.email}
+              onChange={handleInputChange}
+              required
+            />
           </div>
           <div className="col-md-12">
             <label for="Password Confirmation" className="form-label">
@@ -65,6 +88,9 @@ const RegisterForm = () => {
               type="password"
               className="form-control"
               name="password_confirmation"
+              value={state.password_confirmation}
+              onChange={handleInputChange}
+              required
             />
           </div>
           <div className="col-12">
