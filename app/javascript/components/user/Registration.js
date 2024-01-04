@@ -14,12 +14,26 @@ const RegisterForm = () => {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const handleInputChange = (event) => {
-    const {name, value} = event.target;
-    setState(prevState => ({
+    const { name, value } = event.target;
+    setState((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { name, email, password, password_confirmation } = state;
+    dispatch(
+      registerUser({ name, email, password, password_confirmation })
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => {
+          const err = "Registration failed with error";
+          setErrorMessage(err);
+        })
+    );
+  };
   return (
     <>
       <div className="d-flex justify-content-center">
