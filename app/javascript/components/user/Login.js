@@ -30,7 +30,7 @@ const LoginForm = () => {
       })
     )
       .then(() => {
-        navigate("/");
+        navigate("/researcher");
         window.location.reload();
       })
       .catch((error) => {

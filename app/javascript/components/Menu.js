@@ -36,7 +36,7 @@ const Menu = () => {
   // };
   return (
     <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
-      {user.success && <p className="text nav-text">Welcome {user.name}</p>}
+      {user.success && (<p className="text-primary">Welcome {user.name}</p>)}
       {!user.success && (
         <NavLink
           to="/login"

@@ -25,7 +25,7 @@ const RegisterForm = () => {
     const { name, email, password, password_confirmation } = state;
     dispatch(registerUser({ name, email, password, password_confirmation }))
       .then(() => {
-        navigate("/");
+        navigate("/researcher");
       })
       .catch((error) => {
         const err = "Registration failed with error";
