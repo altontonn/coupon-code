@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../Redux/userSlice";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { Alert } from "react-bootstrap";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
