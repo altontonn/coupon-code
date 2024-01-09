@@ -5,6 +5,7 @@ import { logout, userSelector } from "../Redux/userSlice";
 import { getAuthorzation } from "../Redux/authorization";
 const Menu = () => {
   const user = useSelector(userSelector);
+  console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { abilities } = useSelector((state) => state.authorization);
@@ -36,7 +37,7 @@ const Menu = () => {
   // };
   return (
     <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
-      {user.success && (<p className="text-primary">Welcome {user.name}</p>)}
+      {user.success && <p className="text-primary">Welcome {user.name}</p>}
       {!user.success && (
         <NavLink
           to="/login"
@@ -67,6 +68,7 @@ const Menu = () => {
       >
         Candidate
       </NavLink>
+      {user.success && <NavLink>Logout</NavLink>}
     </ul>
   );
 };
