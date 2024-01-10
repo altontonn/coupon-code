@@ -13,7 +13,7 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: [e.target.value] });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -26,12 +26,10 @@ const LoginForm = () => {
         email,
         password,
       })
-    )
-      .then(() => {
+    ).then(() => {
         navigate("/researcher");
         window.location.reload();
-      })
-      .catch((error) => {
+      }).catch((error) => {
         const err = "Email or Password not correct";
         setErrorMessage(err);
       });

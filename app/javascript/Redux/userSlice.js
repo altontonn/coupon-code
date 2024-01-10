@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const login = "/signin";
+const login = "/login";
 
 export const loginUser = createAsyncThunk(
   "user/login",
-  async ({ email, password }) => {
+  async ({ email, password }, thunkAPI) => {
     const response = await fetch(login, {
       method: "POST",
       headers: {
@@ -46,7 +46,7 @@ const initialState = {
 
 export const registerUser = createAsyncThunk(
   "user/register",
-  async ({ name, email, password, password_confirmation }) => {
+  async ({ name, email, password, password_confirmation }, thunkAPI) => {
     const response = await fetch(register, {
       method: "POST",
       headers: {
@@ -96,7 +96,7 @@ const useSlice = createSlice({
         newState.role = action.payload.role;
         localStorage.setItem("user", JSON.stringify(newState));
       })
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerUser.rejected, (state) => {
         const newState = state.user;
         newState.pending = false;
         newState.fulfilled = false;
@@ -118,7 +118,7 @@ const useSlice = createSlice({
         newState.role = action.payload.role;
         localStorage.setItem("user", JSON.stringify(newState));
       })
-      .addCase(loginUser.rejected, (state, action) => {
+      .addCase(loginUser.rejected, (state) => {
         const newState = state.user;
         newState.pending = false;
         newState.fulfilled = false;

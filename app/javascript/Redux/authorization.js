@@ -8,12 +8,12 @@ const initialState = {
 
 // const baseUrl = `${window.location.origin}/api/v1`;
 
-export const getAuthorzation = createAsyncThunk('coupon-code/authorization', async() =>{
+export const getAuthorzation = createAsyncThunk(async(thunkAPI) =>{
   try {
     const response = await axios.get('/api/v1/abilities');
     return response.data;
-  } catch (error) {
-    throw error;
+  } catch (e) {
+    return thunkAPI.rejectWithValue(e.response.data)
   }
 })
 

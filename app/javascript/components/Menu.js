@@ -68,7 +68,15 @@ const Menu = () => {
       >
         Candidate
       </NavLink>
-      {user.success && <NavLink>Logout</NavLink>}
+      {user.success && (
+        <NavLink
+          to="/login"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          onClick={handleLogout}
+        >
+          Logout
+        </NavLink>
+      )}
     </ul>
   );
 };
