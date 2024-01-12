@@ -13,7 +13,14 @@ const Menu = () => {
   const { abilities } = useSelector((state) => state.authorization);
   useEffect(() => {
     dispatch(getAuthorzation());
-  }, [dispatch]);
+    if(user.success) {
+      setShowSuccessMessage(true)
+      const timeoutId = setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 3000)
+      return ()=> clearTimeout(timeoutId)
+    }
+  }, [dispatch, user]);
 
   const handleLogout = async () => {
     try {
