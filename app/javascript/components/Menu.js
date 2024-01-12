@@ -8,7 +8,6 @@ const Menu = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { abilities } = useSelector((state) => state.authorization);
   useEffect(() => {
     dispatch(getAuthorzation());
     if(user.success) {
@@ -30,21 +29,9 @@ const Menu = () => {
       throw error;
     }
   };
-
-  // const isAuthorized = (resource_name, perfom_action) => {
-  //   if (Object.keys(abilities).length !== 0) {
-  //     const rules = abilities["rules"];
-  //     const rules_index = abilities["rules_index"];
-  //     const resource_index = rules_index[resource_name][0];
-  //     const actions = rules[resource_index]["actions"];
-  //     return actions.includes(perfom_action);
-  //   } else {
-  //     return false;
-  //   }
-  // };
   return (
     <>
-      {showSuccessMessage && (
+      { user.success && showSuccessMessage && (
         <p className="text-success text-center">Welcome {user.name}</p>
       )}
       <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
