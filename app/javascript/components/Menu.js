@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, userSelector } from "../Redux/userSlice";
 import { getAuthorzation } from "../Redux/authorization";
 const Menu = () => {
   const user = useSelector(userSelector);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
   console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
