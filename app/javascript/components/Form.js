@@ -7,7 +7,6 @@ const Form = () => {
   const [passcode, setPasscode] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitting with passcode:", passcode, "and user_id:", user.user_id);
     if (passcode.trim()) {
       dispatch(
         createCode({
