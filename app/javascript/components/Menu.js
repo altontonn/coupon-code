@@ -37,48 +37,50 @@ const Menu = () => {
   // };
   return (
     <>
-      {user.success && <p className="text-success text-center">Welcome {user.name}</p>}
-    <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
-      {!user.success && (
-        <NavLink
-          to="/login"
-          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-        >
-          Login
-        </NavLink>
-      )}
-      {!user.success && (
-        <NavLink
-          to="/register"
-          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-        >
-          Register
-        </NavLink>
-      )}
       {user.success && (
+        <p className="text-success text-center">Welcome {user.name}</p>
+      )}
+      <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
+        {!user.success && (
+          <NavLink
+            to="/login"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Login
+          </NavLink>
+        )}
+        {!user.success && (
+          <NavLink
+            to="/register"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Register
+          </NavLink>
+        )}
+        {user.success && (
+          <NavLink
+            to="/researcher"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Researcher
+          </NavLink>
+        )}
         <NavLink
-          to="/researcher"
+          to="/"
           className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
         >
-          Researcher
+          Candidate
         </NavLink>
-      )}
-      <NavLink
-        to="/"
-        className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-      >
-        Candidate
-      </NavLink>
-      {user.success && (
-        <NavLink
-          to="/login"
-          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
-          onClick={handleLogout}
-        >
-          Logout
-        </NavLink>
-      )}
-    </ul>
+        {user.success && (
+          <NavLink
+            to="/login"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+            onClick={handleLogout}
+          >
+            Logout
+          </NavLink>
+        )}
+      </ul>
     </>
   );
 };
