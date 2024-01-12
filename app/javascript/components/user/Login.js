@@ -28,8 +28,8 @@ const LoginForm = () => {
       })
     ).then(() => {
         navigate("/researcher");
-        window.location.reload();
-      }).catch((error) => {
+        // window.location.reload();
+      }).catch(error => {
         const err = "Email or Password not correct";
         setErrorMessage(err);
       });

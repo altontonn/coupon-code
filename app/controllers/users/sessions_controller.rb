@@ -13,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def destroy
     sign_out current_user
-    cookies.delete('remember user token')
+    cookies.delete('remember_user_token')
     render json: { message: 'Signed out successfully' }
   end
 end
