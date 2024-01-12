@@ -6,8 +6,6 @@ import { getAuthorzation } from "../Redux/authorization";
 const Menu = () => {
   const user = useSelector(userSelector);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
-
-  console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { abilities } = useSelector((state) => state.authorization);
