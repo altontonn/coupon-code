@@ -25,6 +25,6 @@ class Api::V1::CodeController < ApplicationController
   private
 
   def code_params
-    params.require(:code).permit(:passcode)
+    params.require(:code).permit(:passcode, :user_id)
   end
 end

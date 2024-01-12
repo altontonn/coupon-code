@@ -1,16 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, userSelector } from "../Redux/userSlice";
 import { getAuthorzation } from "../Redux/authorization";
 const Menu = () => {
   const user = useSelector(userSelector);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { abilities } = useSelector((state) => state.authorization);
   useEffect(() => {
     dispatch(getAuthorzation());
-  }, [dispatch]);
+    if(user.success) {
+      setShowSuccessMessage(true)
+      const timeoutId = setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 3000)
+      return ()=> clearTimeout(timeoutId)
+    }
+  }, [dispatch, user]);
 
   const handleLogout = async () => {
     try {
@@ -22,44 +29,53 @@ const Menu = () => {
       throw error;
     }
   };
-
-  const isAuthorized = (resource_name, perfom_action) => {
-    if (Object.keys(abilities).length !== 0) {
-      const rules = abilities["rules"];
-      const rules_index = abilities["rules_index"];
-      const resource_index = rules_index[resource_name][0];
-      const actions = rules[resource_index]["actions"];
-      return actions.includes(perfom_action);
-    } else {
-      return false;
-    }
-  };
   return (
-    <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
-      {user.success && <p className="text nav-text">Welcome {user.name}</p>}
-      {user.success && (
-        <NavLink
-          to="/researcher"
-          className="mr-6 font-semibold text-teal-200 hover:text-white"
-        >
-          Researcher
-        </NavLink>
+    <>
+      { user.success && showSuccessMessage && (
+        <p className="text-success text-center">Welcome {user.name}</p>
       )}
-      <NavLink
-        to="/"
-        className="mr-6 font-semibold text-teal-200 hover:text-white"
-      >
-        Candidate
-      </NavLink>
-      {!user.success && (
+      <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
+        {!user.success && (
+          <NavLink
+            to="/login"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Login
+          </NavLink>
+        )}
+        {!user.success && (
+          <NavLink
+            to="/register"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Register
+          </NavLink>
+        )}
+        {user.success && (
+          <NavLink
+            to="/researcher"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+          >
+            Researcher
+          </NavLink>
+        )}
         <NavLink
-          to="/login"
-          className="mr-6 font-semibold text-teal-200 hover:text-white"
+          to="/"
+          className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
         >
-          Login
+          Candidate
         </NavLink>
-      )}
-    </ul>
+        {user.success && (
+          <NavLink
+            to="/login"
+            className="mr-6 font-semibold text-teal-200 hover:text-white text-decoration-none"
+            onClick={handleLogout}
+          >
+            Logout
+          </NavLink>
+        )}
+      </ul>
+    </>
   );
 };
 export default Menu;

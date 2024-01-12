@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const login = "/signin";
+const login = "/login";
 
 export const loginUser = createAsyncThunk(
   "user/login",
   async ({ email, password }) => {
     const response = await fetch(login, {
       method: "POST",
-      header: {
+      headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
@@ -33,9 +33,9 @@ const userFromLocalStorage = JSON.parse(localStorage.getItem("user")) || {
   email: "",
   password: "",
   password_confirmation: "",
-  pending: "",
-  success: "",
-  rejected: "",
+  pending: false,
+  success: false,
+  rejected: false,
   errMessage: "",
   role: "",
 };
@@ -46,7 +46,7 @@ const initialState = {
 
 export const registerUser = createAsyncThunk(
   "user/register",
-  async ({ name, email, password, password_confirmation }) => {
+  async ({ name, email, password, password_confirmation }, thunkAPI) => {
     const response = await fetch(signup, {
       method: "POST",
       headers: {
@@ -88,7 +88,7 @@ const useSlice = createSlice({
       .addCase(registerUser.fulfilled, (state, action) => {
         const newState = state.user;
         newState.pending = false;
-        newState.fulfilled = true;
+        newState.success = true;
         newState.rejected = false;
         newState.name = action.payload.name;
         newState.email = action.payload.email;
@@ -99,7 +99,7 @@ const useSlice = createSlice({
       .addCase(registerUser.rejected, (state, action) => {
         const newState = state.user;
         newState.pending = false;
-        newState.fulfilled = false;
+        newState.success = false;
         newState.rejected = true;
       })
       .addCase(loginUser.pending, (state) => {
@@ -110,7 +110,7 @@ const useSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         const newState = state.user;
         newState.pending = false;
-        newState.fulfilled = true;
+        newState.success = true;
         newState.rejected = false;
         newState.name = action.payload.name;
         newState.email = action.payload.email;
@@ -121,11 +121,12 @@ const useSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         const newState = state.user;
         newState.pending = false;
-        newState.fulfilled = false;
+        newState.success = false;
         newState.rejected = true;
       });
   },
 });
+
 export const userSelector = (state) => state.user.user;
 export const { logout } = useSlice.actions;
 export default useSlice.reducer;

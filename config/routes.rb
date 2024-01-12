@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: {
-    sign_in: 'signin',
+    sign_in: 'login',
     sign_out: 'logout',
     registration: 'signup'
   }
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:index, :new, :create]
+      resources :users, only: [:index, :new]
       resources :code, only: [:index, :show, :new, :create]
       resources :abilities, only: [:index, :authorized]
     end

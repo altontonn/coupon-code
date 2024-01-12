@@ -14,6 +14,7 @@ const Form = () => {
           "user_id": user.user_id,
         })
       );
+      window.location.reload();
       setPasscode("");
     }
   };
