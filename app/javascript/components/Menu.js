@@ -36,8 +36,9 @@ const Menu = () => {
   //   }
   // };
   return (
+    <>
+      {user.success && <p className="text-success text-center">Welcome {user.name}</p>}
     <ul className="mb-6 flex items-center justify-center flex-wrap bg-teal-500 p-6">
-      {user.success && <p className="text-primary">Welcome {user.name}</p>}
       {!user.success && (
         <NavLink
           to="/login"
@@ -78,6 +79,7 @@ const Menu = () => {
         </NavLink>
       )}
     </ul>
+    </>
   );
 };
 export default Menu;
