@@ -182,7 +182,7 @@ If you like this project give it a ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank...
+I express my gratitude to Google for its invaluable assistance during the project. I am thankful for the support provided by Google in the successful completion of this endeavor
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
