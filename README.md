@@ -11,7 +11,6 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Author](#author)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
